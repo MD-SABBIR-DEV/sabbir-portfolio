@@ -4,6 +4,7 @@ import Skills from "@/components/Skills";
 import Education from "@/components/Education";
 import Experience from "@/components/Experience";
 import ProjectCard from "@/components/ProjectCard";
+import Contact from "@/components/Contact";
 import projectsData from "@/data/projects.json";
 
 export default function Home() {
@@ -47,6 +48,8 @@ export default function Home() {
           </div>
         </section>
       )}
+
+      <Contact />
     </>
   );
 }
