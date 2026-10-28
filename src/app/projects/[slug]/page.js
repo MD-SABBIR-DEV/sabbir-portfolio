@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -58,10 +59,9 @@ export async function generateMetadata({ params }) {
 }
 
 /**
- * Project Details Page - Server Component.
- * params is a Promise that is awaited per current Next.js specification.
+ * Inner component that awaits params and renders project content.
  */
-export default async function ProjectDetailPage({ params }) {
+async function ProjectDetailContent({ params }) {
   const { slug } = await params;
   const project = projectsData.find((p) => p.slug === slug);
 
@@ -374,5 +374,17 @@ export default async function ProjectDetailPage({ params }) {
         </div>
       </div>
     </article>
+  );
+}
+
+/**
+ * Project Details Page - Server Component.
+ * Wraps content in Suspense to satisfy Next.js streaming / PPR requirements.
+ */
+export default function ProjectDetailPage({ params }) {
+  return (
+    <Suspense fallback={<div className="text-center py-20">Loading project...</div>}>
+      <ProjectDetailContent params={params} />
+    </Suspense>
   );
 }

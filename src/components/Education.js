@@ -14,7 +14,7 @@ function getEducationYear(period) {
 
 /**
  * Education - Server Component.
- * Displays a vertical timeline from profile.education (degree, institution, period, note if present),
+ * Displays floating glassmorphic cards from profile.education (degree, institution, period, note if present),
  * ordered newest first.
  */
 export default function Education() {
@@ -47,61 +47,51 @@ export default function Education() {
           </h2>
         </div>
 
-        {/* Vertical Timeline */}
-        <div className="max-w-3xl">
-          <ol
-            className="relative ml-2.5 space-y-8 border-l border-[var(--color-border)] sm:ml-4"
-            role="list"
-          >
-            {educationList.map((item, idx) => {
-              const hasNote = Boolean(
-                item.note && typeof item.note === "string" && item.note.trim() !== ""
-              );
+        {/* Clean vertical stack with Neon Edge Accent cards */}
+        <div className="max-w-3xl space-y-6">
+          {educationList.map((item, idx) => {
+            const hasNote = Boolean(
+              item.note && typeof item.note === "string" && item.note.trim() !== ""
+            );
 
-              return (
-                <li key={idx} className="relative pl-6 sm:pl-8">
-                  {/* Timeline dot centered on vertical line with glow effect */}
-                  <span
-                    className="absolute -left-[7px] top-6 h-3.5 w-3.5 rounded-full bg-cyan-500 ring-4 ring-cyan-500/20 shadow-[0_0_8px_var(--color-cyan)]"
-                    style={{ "--color-cyan": "#06b6d4" }}
-                    aria-hidden="true"
-                  />
+            return (
+              <div
+                key={idx}
+                className="relative bg-white/[0.03] backdrop-blur-md rounded-xl p-6 md:p-8 overflow-hidden group transition-all duration-300 hover:shadow-[0_0_20px_rgba(34,211,238,0.15)] hover:-translate-y-1 border border-white/5 border-l-4 border-l-cyan-500/40 group-hover:border-l-cyan-400"
+              >
+                {/* Subtle cybernetic glow accent */}
+                <div
+                  className="pointer-events-none absolute -right-10 -top-10 h-32 w-32 rounded-full bg-cyan-500/5 blur-2xl transition-all duration-300 group-hover:bg-cyan-500/10"
+                  aria-hidden="true"
+                />
 
-                  {/* Sleek glassmorphic card with modern hover effect */}
-                  <div className="rounded-xl border border-white/10 bg-white/[0.02] p-6 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-cyan-500/50 hover:bg-white/[0.04]">
-                    <div className="mb-2 flex flex-wrap items-baseline justify-between gap-2">
-                      <h3
-                        className="text-lg font-semibold tracking-tight"
-                        style={{ color: "var(--color-text)" }}
-                      >
-                        {item.degree}
-                      </h3>
-                      {item.period && (
-                        <span className="inline-flex items-center rounded-full border border-cyan-500/20 bg-cyan-500/10 px-3 py-1 font-mono text-xs font-medium text-cyan-400">
-                          {item.period}
-                        </span>
-                      )}
-                    </div>
-
+                <div className="relative flex flex-col sm:flex-row sm:items-start justify-between gap-3">
+                  <div>
+                    <h3 className="text-xl font-bold tracking-tight text-white">
+                      {item.degree}
+                    </h3>
                     {item.institution && (
-                      <p className="text-sm font-medium text-accent">
+                      <p className="mt-1 text-sm sm:text-base font-medium text-cyan-400">
                         {item.institution}
                       </p>
                     )}
-
-                    {hasNote && (
-                      <p
-                        className="mt-2 text-sm"
-                        style={{ color: "var(--color-text-muted)" }}
-                      >
-                        {item.note}
-                      </p>
-                    )}
                   </div>
-                </li>
-              );
-            })}
-          </ol>
+
+                  {item.period && (
+                    <span className="self-start shrink-0 inline-flex items-center rounded-full border border-cyan-500/30 bg-cyan-950/50 px-3 py-1 font-mono text-xs tracking-wider text-cyan-300 shadow-[0_0_10px_rgba(34,211,238,0.1)]">
+                      {item.period}
+                    </span>
+                  )}
+                </div>
+
+                {hasNote && (
+                  <p className="relative mt-3.5 text-sm leading-relaxed text-slate-400">
+                    {item.note}
+                  </p>
+                )}
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>
