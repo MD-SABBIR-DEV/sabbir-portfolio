@@ -60,14 +60,15 @@ export default function Education() {
 
               return (
                 <li key={idx} className="relative pl-6 sm:pl-8">
-                  {/* Timeline dot centered on vertical line */}
+                  {/* Timeline dot centered on vertical line with glow effect */}
                   <span
-                    className="absolute -left-[7px] top-2 h-3.5 w-3.5 rounded-full border-2 border-[var(--color-accent)] bg-[var(--color-bg)]"
+                    className="absolute -left-[7px] top-6 h-3.5 w-3.5 rounded-full bg-cyan-500 ring-4 ring-cyan-500/20 shadow-[0_0_8px_var(--color-cyan)]"
+                    style={{ "--color-cyan": "#06b6d4" }}
                     aria-hidden="true"
                   />
 
-                  {/* Card content */}
-                  <div className="card">
+                  {/* Sleek glassmorphic card with modern hover effect */}
+                  <div className="rounded-xl border border-white/10 bg-white/[0.02] p-6 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-cyan-500/50 hover:bg-white/[0.04]">
                     <div className="mb-2 flex flex-wrap items-baseline justify-between gap-2">
                       <h3
                         className="text-lg font-semibold tracking-tight"
@@ -76,7 +77,7 @@ export default function Education() {
                         {item.degree}
                       </h3>
                       {item.period && (
-                        <span className="label-mono rounded border border-[var(--color-border)] bg-[var(--color-bg)] px-2.5 py-0.5 text-xs">
+                        <span className="inline-flex items-center rounded-full border border-cyan-500/20 bg-cyan-500/10 px-3 py-1 font-mono text-xs font-medium text-cyan-400">
                           {item.period}
                         </span>
                       )}
