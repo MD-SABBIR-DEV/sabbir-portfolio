@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none">
+  <defs>
+    <filter id="softglow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="0.6" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0f1a"/>
+      <stop offset="100%" stop-color="#060d18"/>
+    </linearGradient>
+    <linearGradient id="cyanGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#67e8f9"/>
+      <stop offset="50%" stop-color="#22d3ee"/>
+      <stop offset="100%" stop-color="#0891b2"/>
+    </linearGradient>
+    <linearGradient id="borderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#22d3ee" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#0891b2" stop-opacity="0.3"/>
+    </linearGradient>
+  </defs>
+  <rect width="32" height="32" rx="6" fill="url(#bgGrad)"/>
+  <rect x="0.75" y="0.75" width="30.5" height="30.5" rx="5.5" fill="none" stroke="url(#borderGrad)" stroke-width="0.75"/>
+  <circle cx="4.5" cy="4.5" r="0.8" fill="#22d3ee" opacity="0.5"/>
+  <circle cx="27.5" cy="27.5" r="0.8" fill="#22d3ee" opacity="0.5"/>
+  <path d="M5 22 L5 12 L9 18.5 L13 12 L13 22" stroke="url(#cyanGrad)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none" filter="url(#softglow)"/>
+  <path d="M17 14 Q17 12 19.5 12 Q22 12 22 14 Q22 16 19.5 16 Q17 16 17 18 Q17 20 19.5 20 Q22 20 22 18" stroke="url(#cyanGrad)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none" filter="url(#softglow)"/>
+  <line x1="5" y1="24" x2="22" y2="24" stroke="#22d3ee" stroke-width="0.6" stroke-linecap="round" opacity="0.4"/>
+</svg>
