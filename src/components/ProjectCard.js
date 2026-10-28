@@ -53,7 +53,7 @@ export default function ProjectCard({ project }) {
 
   return (
     <article className="card flex flex-col justify-between overflow-hidden p-0 transition-colors duration-200 hover:border-[var(--color-accent-dim)]">
-      {/* Fixed aspect-ratio image */}
+      {/* Fixed aspect-ratio image — aspect-video prevents layout shift */}
       <div className="relative aspect-video w-full overflow-hidden bg-[var(--color-bg-subtle)]">
         {project.image ? (
           <Image
@@ -62,6 +62,7 @@ export default function ProjectCard({ project }) {
             fill
             sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
             className="object-cover transition-transform duration-300 hover:scale-105"
+            loading="lazy"
           />
         ) : (
           <div
@@ -74,7 +75,7 @@ export default function ProjectCard({ project }) {
       </div>
 
       {/* Card body */}
-      <div className="flex flex-1 flex-col justify-between p-6">
+      <div className="flex flex-1 flex-col justify-between p-5 sm:p-6">
         <div>
           <h3
             className="text-xl font-bold tracking-tight"
@@ -111,19 +112,21 @@ export default function ProjectCard({ project }) {
         </div>
 
         {/* Action: Quick Links (Live Demo & GitHub) + View Details button */}
+        {/* Action buttons — flex-col keeps everything within card bounds */}
         <div className="mt-6 flex flex-col gap-3 pt-2">
+          {/* Quick links: wrap on narrow cards with min-w-0 containment */}
           {(hasLive || hasClient) && (
-            <div className="flex flex-wrap items-center gap-2.5">
+            <div className="flex flex-wrap items-center gap-2">
               {hasLive && (
                 <a
                   href={project.links.live}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 rounded-full border border-cyan-500/30 bg-cyan-500/10 px-3 py-1.5 text-xs sm:text-sm font-medium text-cyan-400 transition-all duration-200 hover:bg-cyan-500 hover:text-slate-900 hover:border-cyan-500 shadow-sm"
+                  className="inline-flex min-w-0 shrink items-center gap-1.5 rounded-full border border-cyan-500/30 bg-cyan-500/10 px-3 py-1.5 text-xs font-medium text-cyan-400 transition-all duration-200 hover:border-cyan-500 hover:bg-cyan-500 hover:text-slate-900"
                   aria-label={`Live demo for ${project.title}`}
                 >
-                  <ExternalLink size={14} aria-hidden="true" />
-                  <span>Live Demo</span>
+                  <ExternalLink size={13} aria-hidden="true" className="shrink-0" />
+                  <span className="truncate">Live Demo</span>
                 </a>
               )}
               {hasClient && (
@@ -131,23 +134,24 @@ export default function ProjectCard({ project }) {
                   href={project.links.client}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 rounded-full border border-cyan-500/30 bg-cyan-500/10 px-3 py-1.5 text-xs sm:text-sm font-medium text-cyan-400 transition-all duration-200 hover:bg-cyan-500 hover:text-slate-900 hover:border-cyan-500 shadow-sm"
+                  className="inline-flex min-w-0 shrink items-center gap-1.5 rounded-full border border-cyan-500/30 bg-cyan-500/10 px-3 py-1.5 text-xs font-medium text-cyan-400 transition-all duration-200 hover:border-cyan-500 hover:bg-cyan-500 hover:text-slate-900"
                   aria-label={`GitHub repository for ${project.title}`}
                 >
-                  <Github size={14} aria-hidden="true" />
-                  <span>GitHub</span>
+                  <Github size={13} className="shrink-0" />
+                  <span className="truncate">GitHub</span>
                 </a>
               )}
             </div>
           )}
 
+          {/* View Details — full-width, never overflows */}
           <Link
             href={`/projects/${project.slug}`}
             className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-[var(--color-accent)] px-4 py-2.5 text-sm font-semibold text-[var(--color-text-inverse)] transition-colors hover:bg-[var(--color-accent-hover)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-focus)]"
             aria-label={`View details for ${project.title}`}
           >
             <span>View Details</span>
-            <ArrowRight size={16} aria-hidden="true" />
+            <ArrowRight size={16} aria-hidden="true" className="shrink-0" />
           </Link>
         </div>
       </div>
