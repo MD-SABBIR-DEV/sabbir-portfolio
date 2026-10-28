@@ -4,7 +4,7 @@
         "title": "BazarDor",
         "tagline": "Today's grocery prices at a glance, in Bangla",
         "order": 1,
-        "image": "/projects/bazar-dor.png",
+        "image": "/projects/Bazar-Dor.png",
         "description": "A Bangla web app that shows the latest prices of everyday grocery items with the daily percentage change, so people can quickly see what became cheaper or costlier. The site notes that all prices are estimates. Product detail pages need a free account (sign up with email, Google or GitHub).",
         "stack": [
             "Next.js (App Router)",
