@@ -140,3 +140,16 @@ div[id].section-target {
   text-transform: uppercase;
   color: var(--color-text-muted);
 }
+
+/* ─── Footer link (CSS-only hover — works in Server Components) ─ */
+.footer-link {
+  color: var(--color-text-muted);
+  text-decoration: none;
+  transition: color 0.15s ease;
+  border-radius: 3px;
+}
+
+.footer-link:hover,
+.footer-link:focus-visible {
+  color: var(--color-accent);
+}

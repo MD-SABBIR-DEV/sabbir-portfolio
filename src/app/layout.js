@@ -1,6 +1,8 @@
 import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import profile from "@/data/profile.json";
+import NavbarServer from "@/components/NavbarServer";
+import Footer from "@/components/Footer";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -25,11 +27,15 @@ export default function RootLayout({ children }) {
       lang="en"
       className={`${inter.variable} ${jetbrainsMono.variable}`}
     >
-      <body>
+      <body className="flex min-h-dvh flex-col">
         <a href="#main-content" className="skip-link">
           Skip to main content
         </a>
-        {children}
+        <NavbarServer />
+        <main id="main-content" className="flex-1">
+          {children}
+        </main>
+        <Footer />
       </body>
     </html>
   );
