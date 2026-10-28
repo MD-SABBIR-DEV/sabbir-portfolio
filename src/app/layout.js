@@ -17,8 +17,37 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata = {
-  title: `${profile.name} — ${profile.designation}`,
+  metadataBase: new URL("https://sabbir-portfolio.vercel.app"),
+  title: {
+    default: `${profile.name} — ${profile.designation}`,
+    template: `%s | ${profile.name}`,
+  },
   description: profile.tagline,
+  icons: {
+    icon: "/favicon.ico",
+  },
+  openGraph: {
+    title: `${profile.name} — ${profile.designation}`,
+    description: profile.tagline,
+    url: "/",
+    siteName: `${profile.name} Portfolio`,
+    images: [
+      {
+        url: profile.photo || "/images/sabbir.jpg",
+        width: 800,
+        height: 800,
+        alt: `${profile.name} — ${profile.designation}`,
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${profile.name} — ${profile.designation}`,
+    description: profile.tagline,
+    images: [profile.photo || "/images/sabbir.jpg"],
+  },
 };
 
 export default function RootLayout({ children }) {

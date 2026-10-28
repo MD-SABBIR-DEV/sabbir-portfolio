@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ExternalLink, CheckCircle2, AlertCircle, Sparkles } from "lucide-react";
 import projectsData from "@/data/projects.json";
+import profile from "@/data/profile.json";
 
 /**
  * Pre-renders all project detail pages at build time.
@@ -28,9 +29,31 @@ export async function generateMetadata({ params }) {
     };
   }
 
+  const title = `${project.title} — Projects | ${profile.name}`;
+  const description = project.tagline || project.description;
+
   return {
-    title: `${project.title} — Projects | Md Sabbir`,
-    description: project.tagline || project.description,
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      type: "article",
+      images: project.image
+        ? [
+            {
+              url: project.image,
+              alt: `Screenshot of ${project.title}`,
+            },
+          ]
+        : [],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: project.image ? [project.image] : [],
+    },
   };
 }
 

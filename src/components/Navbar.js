@@ -109,7 +109,7 @@ export default function Navbar({ name, showExperience }) {
         <button
           ref={buttonRef}
           type="button"
-          className="flex h-10 w-10 items-center justify-center rounded md:hidden"
+          className="flex h-10 w-10 items-center justify-center rounded-lg transition-colors focus-visible:outline-2 md:hidden"
           style={{ color: "var(--color-text)" }}
           aria-label={open ? "Close navigation menu" : "Open navigation menu"}
           aria-expanded={open}
@@ -128,7 +128,7 @@ export default function Navbar({ name, showExperience }) {
           role="dialog"
           aria-modal="true"
           aria-label="Navigation menu"
-          className="absolute inset-x-0 top-16 z-40 md:hidden"
+          className="absolute inset-x-0 top-16 z-40 max-h-[calc(100dvh-4rem)] overflow-y-auto md:hidden"
           style={{
             backgroundColor: "var(--color-bg-card)",
             borderBottom: "1px solid var(--color-border)",
@@ -139,7 +139,7 @@ export default function Navbar({ name, showExperience }) {
               <li key={link.href}>
                 <a
                   href={link.href}
-                  className="block rounded px-3 py-3 text-base font-medium transition-colors duration-150"
+                  className="block rounded-md px-3 py-3 text-base font-medium transition-colors duration-150 focus-visible:outline-2"
                   style={{ color: "var(--color-text-muted)" }}
                   onClick={closeMenu}
                   onMouseEnter={(e) =>

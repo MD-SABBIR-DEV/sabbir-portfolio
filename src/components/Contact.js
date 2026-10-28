@@ -209,7 +209,7 @@ export default function Contact() {
                   rel={item.external ? "noopener noreferrer" : undefined}
                   download={item.download ? true : undefined}
                   aria-label={`${item.label}: ${item.value}`}
-                  className="card group flex min-h-[72px] items-center justify-between gap-3.5 p-4 transition-all duration-150 hover:border-[var(--color-accent)] sm:gap-4 sm:p-5"
+                  className="card group flex min-h-[72px] items-center justify-between gap-3.5 p-4 transition-all duration-150 hover:border-[var(--color-accent)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-focus)] sm:gap-4 sm:p-5"
                 >
                   <div className="flex min-w-0 items-center gap-3.5 sm:gap-4">
                     <div
@@ -263,7 +263,7 @@ export default function Contact() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={`${item.label}: ${item.value}`}
-                  className="card group flex min-h-[72px] items-center justify-between gap-3.5 p-4 transition-all duration-150 hover:border-[var(--color-accent)] sm:gap-4 sm:p-5"
+                  className="card group flex min-h-[72px] items-center justify-between gap-3.5 p-4 transition-all duration-150 hover:border-[var(--color-accent)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-focus)] sm:gap-4 sm:p-5"
                 >
                   <div className="flex min-w-0 items-center gap-3.5 sm:gap-4">
                     <div

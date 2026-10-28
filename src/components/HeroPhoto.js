@@ -49,7 +49,7 @@ export default function HeroPhoto({ src, name }) {
     >
       <Image
         src={src}
-        alt="Portrait of Md Sabbir"
+        alt={`Portrait of ${name || "user"}`}
         fill
         sizes="280px"
         className="object-cover object-top"
