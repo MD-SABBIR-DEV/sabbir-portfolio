@@ -1,0 +1,69 @@
+{
+    "name": "Md Sabbir",
+    "designation": "Junior Web Developer",
+    "tagline": "I build clean, useful web apps with React and Next.js.",
+    "location": "Dhaka, Bangladesh",
+    "email": "sabbir84552@gmail.com",
+    "phone": "+8801813905278",
+    "whatsapp": "8801813905278",
+    "photo": "/images/sabbir.jpg",
+    "resume": "/resume.pdf",
+    "socials": {
+        "github": "https://github.com/MD-SABBIR-DEV",
+        "linkedin": "https://www.linkedin.com/in/md-sabbir-72184b3b0",
+        "facebook": "https://www.facebook.com/md.sabbir.hossain.128020",
+        "instagram": "https://www.instagram.com/s_a_b_b_i_r_dev"
+    },
+    "about": {
+        "paragraphs": [
+            "I am Md Sabbir from Dhaka. I study Biochemistry at Habibullah Bahar College and I am learning web development alongside my studies.",
+            "I enjoy turning ideas into simple, useful apps. So far I have built and deployed BazarDor, a Bangla grocery price tracker; FitLog, a workout planner; and DevStack, a tech stack builder. I built them with the help of AI tools, and I am now going through the code line by line to understand it properly.",
+            "Tutoring young students taught me to explain things step by step, and I try to write code the same way. I am learning Node.js and Express.js to become a full-stack developer, and I am looking for a junior role or internship in web development."
+        ],
+        "hobbies": [
+            "Helping people",
+            "Guiding people the right way",
+            "Gardening"
+        ]
+    },
+    "education": [
+        {
+            "degree": "BSc in Biochemistry",
+            "institution": "Habibullah Bahar College",
+            "period": "2025 - Present",
+            "note": ""
+        },
+        {
+            "degree": "HSC",
+            "institution": "Mohammadpur Government College",
+            "period": "2025",
+            "note": "GPA 4.17"
+        },
+        {
+            "degree": "SSC",
+            "institution": "Rayer Bazar High School",
+            "period": "2023",
+            "note": "GPA 5.00"
+        }
+    ],
+    "experience": [
+        {
+            "role": "Private Tutor",
+            "org": "",
+            "period": "2024 - 2026",
+            "summary": "Taught 3 young students from beginner level up to Class 8, explaining concepts step by step."
+        },
+        {
+            "role": "Sales Associate",
+            "org": "Mina Bazar Super Shop",
+            "period": "2025 (6 months)",
+            "summary": "Assisted customers and handled day-to-day shop tasks."
+        },
+        {
+            "role": "Assistant",
+            "org": "Somiti (local association)",
+            "period": "2024 (7 months)",
+            "summary": "Assisted with routine administrative tasks."
+        }
+    ]
+}

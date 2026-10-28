@@ -1,0 +1,106 @@
+[
+    {
+        "slug": "bazar-dor",
+        "title": "BazarDor",
+        "tagline": "Today's grocery prices at a glance, in Bangla",
+        "order": 1,
+        "image": "/projects/bazar-dor.png",
+        "description": "A Bangla web app that shows the latest prices of everyday grocery items with the daily percentage change, so people can quickly see what became cheaper or costlier. The site notes that all prices are estimates. Product detail pages need a free account (sign up with email, Google or GitHub).",
+        "stack": [
+            "Next.js (App Router)",
+            "TypeScript",
+            "Tailwind CSS",
+            "DaisyUI",
+            "BetterAuth",
+            "React Hot Toast"
+        ],
+        "features": [
+            "Today's price per kg, litre or dozen",
+            "Daily increase or decrease in percent",
+            "Category filtering and price sorting (low to high, high to low)",
+            "BetterAuth sign-up and login (email, Google, GitHub), a profile page, and protected product detail pages with minimum, maximum and average prices"
+        ],
+        "challenges": [
+            "Showing many products and daily changes clearly in a Bangla interface",
+            "Protecting product detail pages and managing login sessions with BetterAuth"
+        ],
+        "improvements": [
+            "Compare prices across different markets",
+            "Add price history charts",
+            "Connect a real, regularly updated price data source",
+            "User accounts and price alerts"
+        ],
+        "links": {
+            "live": "https://bazardor-eight-gray.vercel.app",
+            "client": "https://github.com/MD-SABBIR-DEV/bazar-dor-"
+        }
+    },
+    {
+        "slug": "fit-log",
+        "title": "FitLog",
+        "tagline": "Workout library and daily planner",
+        "order": 2,
+        "image": "/projects/fit-log.png",
+        "description": "A dark, responsive gym companion where users browse exercises, read instructions, build a daily plan and track totals for exercises, minutes and calories.",
+        "stack": [
+            "Next.js 16 (App Router)",
+            "Tailwind CSS",
+            "Lucide React",
+            "React Hot Toast",
+            "LocalStorage"
+        ],
+        "features": [
+            "Library of 12 exercises with category, equipment, duration, calories and rating",
+            "Detail page for each exercise with sets, reps and a 4-step guide",
+            "Daily plan capped at 5 exercises, plus a Save for Later list",
+            "Live summary cards, sorting, Mark as Done and remove actions",
+            "Plans saved in LocalStorage; custom 404 page"
+        ],
+        "challenges": [
+            "Real-time sorting by duration, calories and rating",
+            "Enforcing the 5-exercise daily cap",
+            "Keeping the plan and saved list after page reload with LocalStorage"
+        ],
+        "improvements": [
+            "User accounts and cloud-saved plans",
+            "Workout history and progress charts",
+            "Custom exercises and a larger library"
+        ],
+        "links": {
+            "live": "https://fitlog-weld.vercel.app",
+            "client": "https://github.com/MD-SABBIR-DEV/Fit-log-next.js-project"
+        }
+    },
+    {
+        "slug": "dev-stack",
+        "title": "DevStack",
+        "tagline": "Explore technologies and build your own tech stack",
+        "order": 3,
+        "image": "/projects/dev-stack.png",
+        "description": "A React app where developers explore software technologies and assemble a custom tech stack, with instant feedback for every action.",
+        "stack": [
+            "React.js (Vite)",
+            "Tailwind CSS",
+            "React Toastify"
+        ],
+        "features": [
+            "Loads technologies from a JSON file with a loading state",
+            "Add technologies to your stack with duplicate prevention",
+            "Single and bulk removal",
+            "Toast notifications and a live selected count"
+        ],
+        "challenges": [
+            "Keeping the stack list, duplicate checks and notifications in sync with state",
+            "Loading data on mount without blocking the first render"
+        ],
+        "improvements": [
+            "Save the stack in LocalStorage or an account",
+            "Search and filter technologies",
+            "Export or share the finished stack"
+        ],
+        "links": {
+            "live": "https://dev-stack-henna.vercel.app",
+            "client": "https://github.com/MD-SABBIR-DEV/Dev-stack"
+        }
+    }
+]

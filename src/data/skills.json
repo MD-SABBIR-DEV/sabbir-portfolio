@@ -1,0 +1,78 @@
+[
+    {
+        "group": "Frontend",
+        "items": [
+            {
+                "name": "HTML5",
+                "level": "Comfortable"
+            },
+            {
+                "name": "CSS3",
+                "level": "Comfortable"
+            },
+            {
+                "name": "JavaScript",
+                "level": "Comfortable"
+            },
+            {
+                "name": "React.js",
+                "level": "Comfortable"
+            },
+            {
+                "name": "Tailwind CSS",
+                "level": "Comfortable"
+            },
+            {
+                "name": "Bootstrap",
+                "level": "Comfortable"
+            }
+        ]
+    },
+    {
+        "group": "Framework",
+        "items": [
+            {
+                "name": "Next.js",
+                "level": "Learning"
+            }
+        ]
+    },
+    {
+        "group": "Tools",
+        "items": [
+            {
+                "name": "Git",
+                "level": "Comfortable"
+            },
+            {
+                "name": "GitHub",
+                "level": "Comfortable"
+            },
+            {
+                "name": "Vercel",
+                "level": "Comfortable"
+            },
+            {
+                "name": "VS Code",
+                "level": "Comfortable"
+            }
+        ]
+    },
+    {
+        "group": "Currently learning",
+        "items": [
+            {
+                "name": "Node.js",
+                "level": "Learning"
+            },
+            {
+                "name": "Express.js",
+                "level": "Learning"
+            },
+            {
+                "name": "MongoDB",
+                "level": "Learning"
+            }
+        ]
+    }
+]
